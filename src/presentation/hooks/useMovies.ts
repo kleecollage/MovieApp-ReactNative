@@ -20,7 +20,7 @@ export const useMovies = () => {
     const nowPlayingPromise =  await UseCases.moviesNowPLayingUseCase(movieDBFetcher);
     // console.log(nowPlayingMovies[0])
     const upcomingPromise = UseCases.moviesUpcomingUseCase(movieDBFetcher);
-    const topRatedPromise = UseCases.moviesPopularUseCase(movieDBFetcher);
+    const topRatedPromise = UseCases.moviesTopRatedUseCase(movieDBFetcher);
     const popularPromise = UseCases.moviesPopularUseCase(movieDBFetcher);
 
     const [
@@ -41,13 +41,6 @@ export const useMovies = () => {
     setPopular(popularMovies);
     
     setIsLoading(false);
-
-    console.log({
-      nowPayingMovie,
-      upComingMovies,
-      topRatedMovies,
-      popularMovies,
-    })
   }
 
   return {
