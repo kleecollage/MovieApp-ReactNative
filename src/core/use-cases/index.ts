@@ -4,3 +4,4 @@ export * from './movies/top-rated.use-case';
 export * from './movies/upcoming.use-cases';
 
 export * from './movie/get-by-id.use-case';
+export * from './movie/get-cast.use-case';

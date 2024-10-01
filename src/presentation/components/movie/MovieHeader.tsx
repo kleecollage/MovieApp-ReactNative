@@ -1,38 +1,51 @@
-import { Image, Pressable, StyleSheet, Text, useWindowDimensions, View } from "react-native";
-import { FullMovie } from "../../../core/entities/movie.entity";
-import { useNavigation } from "@react-navigation/native";
+import { Image, Pressable, StyleSheet, Text, View, useWindowDimensions } from 'react-native';
+import { FullMovie } from '../../../core/entities/movie.entity';
+import { useNavigation } from '@react-navigation/native';
 
-interface Props{
-  movie: FullMovie;
+interface Props {
+  // movie: FullMovie;
+  poster?: string;
+  originalTitle?: string;
+  title?: string;
 }
 
-export const MovieHeader = ({ movie }: Props) => {
-  
-  const{ height: screenHeight } = useWindowDimensions();
+
+export const MovieHeader = ({ poster, originalTitle, title }: Props) => {
+
+  const { height: screenHeight } = useWindowDimensions();
   const navigation = useNavigation();
 
+
+
   return (
-    <View style={{...styles.imageContainer, height: screenHeight * 0.7 }}>
-      <View style={styles.imageBorder}> 
-        <Image
-          style={ styles.posterImage }
-          source={{ uri: movie.poster }}
-        />
+    <>
+      <View style={{ ...styles.imageContainer, height: screenHeight * 0.7 }}>
+        <View style={ styles.imageBorder }>
+          <Image 
+            style={ styles.posterImage }
+            source={{ uri: poster }}
+          />
+        </View>
       </View>
 
-      <View style={styles.marginContainer}>
-        <Text style={styles.subTitle}>{ movie.originalTitle }</Text>
-        <Text style={styles.title}>{ movie.title }</Text>
+      <View style={ styles.marginContainer }>
+        <Text style={ styles.subTitle }>{ originalTitle }</Text>
+        <Text style={ styles.title }>{ title }</Text>
       </View>
 
-      <View style={styles.backButton}>
+      <View style={ styles.backButton }>
         <Pressable onPress={ () => navigation.goBack() }>
-          <Text style={styles.backButtonText}>Regresar</Text>
+          <Text style={ styles.backButtonText }>Regresar</Text>
         </Pressable>
       </View>
-    </View>
+    
+    
+    </>
   )
 }
+
+
+
 
 
 const styles = StyleSheet.create({
