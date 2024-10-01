@@ -6,7 +6,6 @@ interface Props {
 }
 
 export const CastActor = ({actor}: Props) => {
-  console.log(actor.name)
   return (
     <View style={styles.container}>
 

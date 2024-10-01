@@ -1,5 +1,5 @@
 import { ScrollView, Text, View } from 'react-native'
-import { useRoute } from '@react-navigation/native'
+// import { useRoute } from '@react-navigation/native'
 import React from 'react'
 import { StackScreenProps } from '@react-navigation/stack';
 import { RootStackParams } from '../../navigation/Navigation';
